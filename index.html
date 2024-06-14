@@ -34,10 +34,10 @@
             <h2>Onze Eieren</h2>
             <p>Wij bieden verschillende soorten eieren aan:</p>
             <ul>
-                <li><img src="eggs6.jpg" alt="6 eieren doosje"><strong>6 Eieren:</strong> €1.50 per doosje</li>
-                <li><img src="eggs10.jpg" alt="10 eieren doosje"><strong>10 Eieren:</strong> €2.20 per doosje</li>
+                <li><img src="eggs6.jpg" alt="6 eieren doosje"><strong>6 Eieren:</strong> €1.80 per doosje</li>
+                <li><img src="eggs10.jpg" alt="10 eieren doosje"><strong>10 Eieren:</strong> €3.00 per doosje</li>
             </ul>
-            <form id="order-form">
+            <form id="order-form" action="https://formspree.io/f/meqyyrbk" method="POST">
                 <label for="six-pack">Aantal doosjes van 6 eieren:</label>
                 <input type="number" id="six-pack" name="six-pack" min="0" value="0">
                 <br>
@@ -56,6 +56,8 @@
                 <label for="message">Bericht:</label>
                 <textarea id="message" name="message" required></textarea>
                 <br>
+                <input type="hidden" name="_subject" value="Bestelling Eieren">
+                <input type="hidden" id="total" name="total" value="0">
                 <button type="submit">Bestelling Plaatsen</button>
             </form>
         </section>
