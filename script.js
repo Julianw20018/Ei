@@ -1,16 +1,7 @@
 document.getElementById('order-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
     const sixPackCount = document.getElementById('six-pack').value;
     const tenPackCount = document.getElementById('ten-pack').value;
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const message = document.getElementById('message').value;
+    const total = (sixPackCount * 1.80) + (tenPackCount * 3.00);
 
-    const subject = 'Bestelling Eieren';
-    const body = `Naam: ${name}\nE-mail: ${email}\nTelefoonnummer: ${phone}\n\nBestelling:\nDoosjes van 6 eieren: ${sixPackCount}\nDoosjes van 10 eieren: ${tenPackCount}\n\nBericht:\n${message}`;
-    const mailtoLink = `mailto:julianwilbrink045@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    window.location.href = mailtoLink;
+    document.getElementById('total').value = `Totaalbedrag: €${total.toFixed(2)}`;
 });
